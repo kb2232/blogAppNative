@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, ScrollView,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView,Button } from 'react-native';
 
-const ShowScreen = ()=> {
+const ShowScreen = props => {
 
 
   return (
     <View style={styles.container}>
       <ScrollView>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('Index')}>
-          <Text>Home Screen</Text>
-        </TouchableOpacity>
+        <Button title="Home Screen" onPress={()=>props.navigation.navigate('Index')} />
         <Text>SHOW</Text>
         <Text>SHOW</Text>
         <Text>SHOW</Text>

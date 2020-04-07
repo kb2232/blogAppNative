@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
 
 const IndexScreen = (props)=> {
 
@@ -7,15 +7,36 @@ const IndexScreen = (props)=> {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('ShowScreen')}>
-          <Text>Show Screen</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('CreateScreen')}>
-          <Text>Create Screen</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('EditScreen')}>
-          <Text>Edit Screen</Text>
-        </TouchableOpacity>
+        <Button title="Show Screen" onPress={()=>props.navigation.navigate('ShowScreen')} />
+        <Button title="Create Screen" onPress={()=>props.navigation.navigate('CreateScreen')} />
+        <Button title="Edit Screen" onPress={()=>props.navigation.navigate('EditScreen')} />
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
+        <Text>BLOG</Text>
         <Text>BLOG</Text>
         <Text>BLOG</Text>
         <Text>BLOG</Text>
