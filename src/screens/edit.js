@@ -1,34 +1,22 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
+import React, {useContext} from 'react';
+import { StyleSheet} from 'react-native';
+import { ContextStore } from '../context/Store';
+import BlogPostForm from '../components/blogForm';
+
 
 const EditScreen = props => {
+	const {data,editBlogPost} = useContext(ContextStore);
+	const post = data.find(blogpost => blogpost.id === props.navigation.getParam('id'));
 
-
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Button title="Home Screen" onPress={()=>props.navigation.navigate('Index')} />
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-        <Text>EDIT</Text>
-      </ScrollView>
-    </View>
-  );
+  return(
+    <BlogPostForm 
+    intitialValues={{title:post.title, content:post.content}}
+    onSubmit={(title,content)=>{
+      editBlogPost(props.navigation.getParam('id'),title,content,()=>{props.navigation.pop()});
+    }} />
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    minHeight:'100%',
-    padding:10,
-    flex:1
-  }
-});
+const styles = StyleSheet.create({});
 
 export default EditScreen;

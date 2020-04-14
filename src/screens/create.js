@@ -1,34 +1,18 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, ScrollView, Button } from 'react-native';
-
+import React, {useContext} from 'react';
+import { StyleSheet} from 'react-native';
+import { ContextStore } from '../context/Store';
+import BlogPostForm from '../components/blogForm';
 const CreateScreen = props => {
-
-
+  const {addBlogPost} = useContext(ContextStore)
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Button title="Home Screen" onPress={()=>props.navigation.navigate('Index')} />
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-        <Text>CREATE</Text>
-      </ScrollView>
-    </View>
-  );
+    <BlogPostForm 
+      onSubmit={(title,content)=>{
+        addBlogPost(title,content,()=>props.navigation.navigate('Index'));
+      }} 
+    />
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    minHeight:'100%',
-    padding:10,
-    flex:1
-  }
-});
+const styles = StyleSheet.create({});
 
 export default CreateScreen;
